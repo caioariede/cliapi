@@ -5,10 +5,8 @@ Dead simple way to create Web APIs for command-line tools.
 ### Example server
 
 ```python
-from cliapi import get, run_server, command_output, Arg
-
-from webargs import fields
-from webargs.bottleparser import use_args
+from cliapi import get, run_server, command_output
+from cliapi.args import use_args, fields, Arg
 
 
 @get('/whoami')
