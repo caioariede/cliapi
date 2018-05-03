@@ -1,8 +1,7 @@
 import subprocess
 import shlex
 
-# local
-import decoders
+from . import decoders
 from . import logger
 from . import config
 
