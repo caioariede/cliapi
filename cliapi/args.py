@@ -1,12 +1,10 @@
 from marshmallow import fields as ma_fields
 
 from webargs import fields
-from webargs import use_args
+from webargs.bottleparser import use_args
 
 
 class FormattedArg(str):
-    arg_str: str
-
     def __init__(self, arg_str):
         self.arg_str = arg_str
 
