@@ -1,4 +1,7 @@
-from marshmallow import fields
+from marshmallow import fields as ma_fields
+
+from webargs import fields
+from webargs import use_args
 
 
 class FormattedArg(str):
@@ -8,7 +11,7 @@ class FormattedArg(str):
         self.arg_str = arg_str
 
 
-class Arg(fields.Field):
+class Arg(ma_fields.Field):
     def __init__(self, field, fmt=None, coerce=lambda v: v):
         self.field = field
         self.fmt = fmt
@@ -20,3 +23,10 @@ class Arg(fields.Field):
         if self.fmt:
             return FormattedArg(self.fmt.format(result))
         return result
+
+
+__all__ = (
+    'fields',
+    'use_args',
+    'Arg',
+)
