@@ -7,5 +7,9 @@ setup(
     author='Caio Ariede',
     description='Expose command-line tools around APIs',
     packages=find_packages(),
-    install_requires=['bottle>=0.12.13', 'webargs>=2.1.0'],
+    install_requires=[
+        'bottle>=0.12.13',
+        'webargs>=2.1.0',
+        'marshmallow>=2.7.0',
+    ],
 )
