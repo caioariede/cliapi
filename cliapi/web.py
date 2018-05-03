@@ -7,7 +7,9 @@ from .args import FormattedArg
 
 def command_output(command, args=None, shell=None,
                    serializer=serializers.default_serializer):
-    output = cmd.run_command(command, args=_parse_args(args), shell=shell)
+    if args:
+        args = _parse_args(args)
+    output = cmd.run_command(command, args=args, shell=shell)
     serialized = serializer(output)
     response.content_type = serialized['content_type']
     return serialized['content']
